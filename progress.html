@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Space - Progress</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+
+    <!-- TOP NAVIGATION -->
+
+    <nav class="app-nav">
+
+      <button onclick="window.location.href='tracker.html'">
+        🏠 Home
+      </button>
+
+  <button onclick="window.location.href='tasks.html'">
+  📝 To-Do List
+</button>
+
+      <button onclick="window.location.href='habits.html'">
+        🌷 Habits
+      </button>
+
+      <button class="nav-active"
+              onclick="window.location.href='progress.html'">
+        📊 Progress
+      </button>
+
+      <button onclick="window.location.href='calender.html'">
+        📅 Calendar
+      </button>
+
+      <button onclick="window.location.href='settings.html'">
+        ⚙️ Settings
+      </button>
+
+    </nav>
+
+    <header>
+      <h1>My Progress ♡</h1>
+      <p>Every small step counts 🌷</p>
+      <p class="current-date" id="currentDate"></p>
+    </header>
+
+    <!-- DAILY PROGRESS -->
+
+    <section class="progress-box centered-progress">
+
+      <p class="section-label">YOUR DAILY PROGRESS</p>
+
+      <div class="flower-progress">
+
+        <div class="flower-visual botanical-flower">
+
+          <svg viewBox="0 0 200 220"
+               xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Stem -->
+
+            <path d="M100 205 Q95 140 105 85"
+                  fill="none"
+                  stroke="#789477"
+                  stroke-width="5"
+                  stroke-linecap="round"/>
+
+            <!-- Left leaf -->
+
+            <path d="M100 160 Q55 145 48 115 Q88 120 100 160Z"
+                  fill="#A9C0A0"/>
+
+            <!-- Right leaf -->
+
+            <path d="M99 180 Q145 165 153 135 Q115 140 99 180Z"
+                  fill="#91AD88"/>
+
+            <!-- Flower -->
+
+            <g transform="translate(105 75)">
+
+              <ellipse rx="25" ry="40"
+                       fill="#C8B4E5"
+                       transform="rotate(0) translate(0 -28)"/>
+
+              <ellipse rx="25" ry="40"
+                       fill="#B9A0DA"
+                       transform="rotate(72) translate(0 -28)"/>
+
+              <ellipse rx="25" ry="40"
+                       fill="#D7C8ED"
+                       transform="rotate(144) translate(0 -28)"/>
+
+              <ellipse rx="25" ry="40"
+                       fill="#B9A0DA"
+                       transform="rotate(216) translate(0 -28)"/>
+
+              <ellipse rx="25" ry="40"
+                       fill="#D7C8ED"
+                       transform="rotate(288) translate(0 -28)"/>
+
+              <circle r="15" fill="#E8CC91"/>
+
+              <circle r="5" fill="#C59D5F"/>
+
+            </g>
+
+          </svg>
+
+        </div>
+
+        <!-- Progress Percentage -->
+
+        <strong id="progressText">0%</strong>
+
+        <p>Growing every day ♡</p>
+
+      </div>
+
+    </section>
+
+
+    <!-- SCORE GRAPHS -->
+
+    <section class="score-section">
+
+      <p class="section-label">YOUR DAILY SCORE 📈</p>
+
+      <div class="line-graph-container">
+        <canvas id="dailyScoreGraph"></canvas>
+      </div>
+
+
+      <p class="section-label">YOUR WEEKLY SCORE 🌷</p>
+
+      <div class="line-graph-container">
+        <canvas id="weeklyScoreGraph"></canvas>
+      </div>
+
+    </section>
+
+
+    <!-- MOTIVATIONAL MESSAGE -->
+
+    <p class="daily-quote" id="dailyQuote">
+      Little steps, every day. ♡
+    </p>
+
+
+    <!-- BACK BUTTON -->
+
+    <button onclick="window.location.href='tracker.html'">
+      ← Back to Home
+    </button>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

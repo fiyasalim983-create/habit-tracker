@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Space - Habits</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>My Habits 🌷</h1>
+      <p>Small habits, beautiful progress. ♡</p>
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav class="app-nav">
+
+      <button onclick="window.location.href='tracker.html'">
+        🏠 Home
+      </button>
+
+      <button onclick="window.location.href='tasks.html'">
+        📝 To-Do List
+      </button>
+
+      <button class="nav-active"
+              onclick="window.location.href='habits.html'">
+        🌷 Habits
+      </button>
+
+      <button onclick="window.location.href='progress.html'">
+        📊 Progress
+      </button>
+
+      <button onclick="window.location.href='calender.html'">
+        📅 Calendar
+      </button>
+
+      <button onclick="window.location.href='settings.html'">
+        ⚙️ Settings
+      </button>
+
+    </nav>
+
+
+    <!-- HABITS SECTION -->
+
+    <section class="progress-box">
+<p class="section-label">MY DAILY HABITS</p>
+
+<p class="habits-date" id="habitsDate"></p>
+
+      <div id="habitsList">
+        <!-- Habits will appear here -->
+      </div>
+
+      <p id="emptyHabitsMessage">
+        Your habits will appear here. 🌱
+      </p>
+
+    </section>
+
+
+    <button onclick="window.location.href='tracker.html'">
+      + Add Habits
+    </button>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+  <script>
+
+ function displayHabits() {
+
+  const habitsList =
+    document.getElementById("habitsList");
+
+  const emptyMessage =
+    document.getElementById("emptyHabitsMessage");
+
+  const habits =
+    JSON.parse(localStorage.getItem("habits")) || [];
+
+  const checked =
+    JSON.parse(localStorage.getItem("habitChecks")) || {};
+
+  habitsList.innerHTML = "";
+
+  if (habits.length === 0) {
+
+    emptyMessage.style.display = "block";
+
+    return;
+
+  }
+
+  emptyMessage.style.display = "none";
+
+
+  /* Today's date */
+
+  const today = new Date();
+
+  const dateKey =
+    `${today.getFullYear()}-${String(
+      today.getMonth() + 1
+    ).padStart(2, "0")}-${String(
+      today.getDate()
+    ).padStart(2, "0")}`;
+
+
+  habits.forEach((habit, index) => {
+
+    const habitItem =
+      document.createElement("div");
+
+    habitItem.className = "habit-item";
+
+
+    const checkKey =
+      `${index}-${dateKey}`;
+
+
+    const isCompleted =
+      checked[checkKey] === true;
+
+
+habitItem.innerHTML = `
+
+  <label class="habit-check">
+
+    <input
+      type="checkbox"
+      ${isCompleted ? "checked" : ""}
+      onchange="toggleHabitFromHabitsPage(${index})"
+    >
+
+    <span>
+      ${index + 1}. ${escapeHTML(habit)}
+    </span>
+
+  </label>
+
+  <span class="habit-status">
+    ${isCompleted ? "Completed ♡" : "Not completed"}
+  </span>
+
+`;
+
+
+    habitsList.appendChild(habitItem);
+
+  });
+
+}
+function toggleHabitFromHabitsPage(index) {
+
+  const today = new Date();
+
+const dateKey =
+  `${today.getFullYear()}-${String(
+    today.getMonth() + 1
+  ).padStart(2, "0")}-${String(
+    today.getDate()
+  ).padStart(2, "0")}`;
+
+const checked =
+  JSON.parse(localStorage.getItem("habitChecks")) || {};
+
+const checkKey = `${index}-${dateKey}`;
+
+if (checked[checkKey]) {
+  delete checked[checkKey];
+} else {
+  checked[checkKey] = true;
+}
+
+localStorage.setItem(
+  "habitChecks",
+  JSON.stringify(checked)
+);
+
+displayHabits();
+
+}
+const habitsDate = document.getElementById("habitsDate");
+
+const today = new Date();
+
+habitsDate.textContent =
+  today.toLocaleDateString("en-IN", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+  displayHabits();
+
+  </script>
+
+</body>
+</html>

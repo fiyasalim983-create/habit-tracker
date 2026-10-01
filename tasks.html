@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Space - Tasks</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>My Tasks ♡</h1>
+
+  <h2 id="taskDate"></h2>
+
+  <p>Small steps every day 🌷</p>
+</header>
+
+  <main class="todo-section">
+
+    <div class="todo-input">
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Add a task..."
+        maxlength="100"
+      >
+
+      <button onclick="addTask()">+ Add</button>
+    </div>
+
+    <ul id="taskList"></ul>
+    <button onclick="showTaskHistory()">
+  📅 View History
+</button>
+
+<div id="taskHistory"></div>
+
+    <button onclick="window.location.href='tracker.html'">
+      ← Back to Home
+    </button>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

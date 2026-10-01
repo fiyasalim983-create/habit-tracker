@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Space - Settings</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+    <!-- TOP NAVIGATION -->
+
+    <nav class="app-nav">
+
+      <button onclick="window.location.href='tracker.html'">
+        🏠 Home
+      </button>
+
+      <button onclick="window.location.href='tasks.html'">
+        📝 To-Do List
+      </button>
+
+      <button onclick="window.location.href='habits.html'">
+        🌷 Habits
+      </button>
+
+      <button onclick="window.location.href='progress.html'">
+        📊 Progress
+      </button>
+
+      <button onclick="window.location.href='calender.html'">
+        📅 Calendar
+      </button>
+
+      <button class="nav-active"
+              onclick="window.location.href='settings.html'">
+        ⚙️ Settings
+      </button>
+
+    </nav>
+
+    <header>
+      <h1>Settings ⚙️</h1>
+      <p>Make your space feel like you. ♡</p>
+    </header>
+
+
+    <!-- SETTINGS -->
+
+    <section class="settings-section">
+<div class="setting-item">
+  <div>
+    <strong>🌷 App Theme</strong>
+    <p id="themeText">Lavender & Cream</p>
+  </div>
+
+  <button onclick="toggleTheme()" id="themeButton">
+    🌙 Dark
+  </button>
+</div>
+
+
+      <div class="setting-item">
+        <div>
+          <strong>✨ Daily Motivation</strong>
+          <p>Small steps still count. ♡</p>
+        </div>
+
+        <span>🌸</span>
+      </div>
+
+
+      <div class="setting-item">
+        <div>
+          <strong>🗑️ Clear Data</strong>
+          <p>Remove your saved habits and tasks.</p>
+        </div>
+
+        <button onclick="clearAppData()">
+          Clear
+        </button>
+      </div>
+
+    </section>
+
+
+    <button onclick="window.location.href='tracker.html'">
+      ← Back to Home
+    </button>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+  <script>
+function toggleTheme() {
+
+  document.body.classList.toggle("dark-mode");
+
+  const isDark =
+    document.body.classList.contains("dark-mode");
+
+  localStorage.setItem("darkMode", isDark);
+
+  const themeText =
+    document.getElementById("themeText");
+
+  const themeButton =
+    document.getElementById("themeButton");
+
+  if (isDark) {
+
+    themeText.textContent = "Dark Mode";
+    themeButton.textContent = "☀️ Light";
+
+  } else {
+
+    themeText.textContent = "Lavender & Cream";
+    themeButton.textContent = "🌙 Dark";
+
+  }
+
+}
+    function clearAppData() {
+
+      const confirmClear =
+        confirm("Are you sure you want to clear your saved data?");
+
+      if (!confirmClear) return;
+
+      localStorage.removeItem("habits");
+      localStorage.removeItem("habitChecks");
+      localStorage.removeItem("tasks");
+
+      alert("Your saved data has been cleared.");
+
+      window.location.href = "tracker.html";
+
+    }
+
+  </script>
+
+</body>
+
+</html>

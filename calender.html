@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Space - Calendar</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <<div class="container">
+
+    <!-- TOP NAVIGATION -->
+
+    <nav class="app-nav">
+
+      <button onclick="window.location.href='tracker.html'">
+        🏠 Home
+      </button>
+
+      <button onclick="window.location.href='tasks.html'">
+        📝 To-Do List
+      </button>
+
+      <button onclick="window.location.href='habits.html'">
+        🌷 Habits
+      </button>
+
+      <button onclick="window.location.href='progress.html'">
+        📊 Progress
+      </button>
+
+      <button class="nav-active"
+              onclick="window.location.href='calender.html'">
+        📅 Calendar
+      </button>
+
+      <button onclick="window.location.href='settings.html'">
+        ⚙️ Settings
+      </button>
+
+    </nav>
+
+    <header>
+      <h1>My Calendar ♡</h1>
+      <p>Little steps, every day 🌷</p>
+    </header>
+
+    <section class="calendar-box">
+
+     <div class="calendar-navigation">
+
+  <button onclick="changeMonth(-1)">◀</button>
+
+  <h2 id="calendarMonth"></h2>
+
+  <button onclick="changeMonth(1)">▶</button>
+
+</div>
+
+      <div class="calendar-grid" id="calendarGrid"></div>
+      <div class="calendar-legend">
+
+  <span>
+    <i class="legend-box normal"></i>
+    No progress
+  </span>
+
+  <span>
+    <i class="legend-box partial"></i>
+    Partially completed
+  </span>
+
+  <span>
+    <i class="legend-box complete"></i>
+    Fully completed
+  </span>
+
+</div>
+
+    </section>
+
+    <button onclick="window.location.href='tracker.html'">
+      ← Back to Home
+    </button>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
