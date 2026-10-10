@@ -17,12 +17,12 @@ A personal habit tracker I built to stay consistent with my daily routines.
 - Hosted on GitHub Pages
 
 ## What I learned
-Built a multi-page web application using HTML, CSS, and JavaScript.
-Learned to use JavaScript and LocalStorage for interactive features and saving data.
-Worked with dates, calendars, tasks, habits, and progress graphs.
-Improved my debugging and problem-solving skills.
-Learned how to use GitHub and GitHub Pages to publish a project.
-Gained practical experience in taking a project from idea → development → deployment.
+- Built a multi-page web application using HTML, CSS, and JavaScript.
+- Learned to use JavaScript and LocalStorage for interactive features and saving data.
+- Worked with dates, calendars, tasks, habits, and progress graphs.
+- Improved my debugging and problem-solving skills.
+- Learned how to use GitHub and GitHub Pages to publish a project.
+- Gained practical experience in taking a project from idea → development → deployment.
 
 ## Future improvements
 - Streak tracking
