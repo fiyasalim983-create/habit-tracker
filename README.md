@@ -1,6 +1,6 @@
 # My Habit Tracker 🌷
 
-
+![Screenshot](Screenshot%20.png)
 
 A personal habit tracker I built to stay consistent with my daily routines.
 "Small steps every day. You don't have to be perfect."
