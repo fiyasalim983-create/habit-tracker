@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>My Space 🤍</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>My Habit Tracker 🌷</h1>
+    <p>Small steps every day. You don't have to be perfect. 🤍</p>
+  </header>
+<nav class="app-nav">
+
+  <button class="nav-active"
+          onclick="window.location.href='tracker.html'">
+    🏠 Home
+  </button>
+
+<button onclick="window.location.href='tasks.html'">
+  📝 To-Do List
+</button>
+
+  <button onclick="window.location.href='habits.html'">
+    🌷 Habits
+  </button>
+
+  <button onclick="window.location.href='progress.html'">
+    📊 Progress
+  </button>
+
+<button onclick="window.location.href='calender.html'">
+  📅 Calendar
+</button>
+
+  <button onclick="window.location.href='settings.html'">
+    ⚙️ Settings
+  </button>
+
+</nav>
+  <div class="controls">
+
+    <div class="month-control">
+      <button onclick="changeMonth(-1)">←</button>
+
+      <h2 id="monthTitle"></h2>
+
+      <button onclick="changeMonth(1)">→</button>
+    </div>
+
+    <button class="add-btn" onclick="goToToday()">
+      Today
+    </button>
+
+  </div>
+
+
+
+  <!-- Tracker -->
+
+  <div class="tracker-wrapper">
+    <table id="habitTable"></table>
+  </div>
+
+  <!-- Add habit -->
+<div class="top-add-section">
+
+  <input type="hidden" id="habitInput">
+
+  <button class="top-add-btn" onclick="quickAddHabit()">
+    +
+  </button>
+
+</div>
+
+
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
